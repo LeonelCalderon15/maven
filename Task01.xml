@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QATask" parallel="tests" thread-count="1">
+ <test name="Task_01">
+      <classes>
+        <class name="test.Task_1" ></class>  
+    </classes>
+</test>
+</suite>

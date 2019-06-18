@@ -1,0 +1,31 @@
+# This is a sample build configuration for Java (Maven).
+# Check our guides at https://confluence.atlassian.com/x/zd-5Mw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: maven:3.6.1
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - maven
+        script: # Modify the commands below to build your repository.
+          - apt-get update
+          - apt-get install -y unzip xvfb libxi6 libgconf-2-4
+          #- apt-get install default-jdk
+          - curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
+          - echo "deb [arch=amd64]  http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+          - apt-get -y update
+          - apt-get -y install google-chrome-stable
+          - wget https://chromedriver.storage.googleapis.com/76.0.3809.12/chromedriver_linux64.zip
+          - unzip chromedriver_linux64.zip -d /usr/bin
+          - chown root:root /usr/bin/chromedriver
+          - chmod +x /usr/bin/chromedriver          
+          - wget -P /usr/bin/ https://selenium-release.storage.googleapis.com/3.13/selenium-server-standalone-3.13.0.jar
+          #- xvfb-run java -Dwebdriver.chrome.driver=/usr/bin/chromedriver -jar /usr/bin/selenium-server-standalone-3.13.0.jar
+          - java -Dwebdriver.chrome.driver=/usr/bin/chromedriver -jar /usr/bin/selenium-server-standalone-3.13.0.jar
+          #- java -jar /usr/bin/selenium-server-standalone-3.13.0.jar -role hub
+          #- chromedriver --url-base=/wd/hub
+          - java -Dwebdriver.chrome.driver="/usr/bin/chromedriver" -jar /usr/bin/selenium-server-standalone-3.12.0.jar -role webdriver -hub http://localhost:4444/grid/register -port 5566 -browser browserName=chrome,maxInstances=2 -maxSession 1
+          - mvn -B verify # -B batch mode makes Maven less verbose

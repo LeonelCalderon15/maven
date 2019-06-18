@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="QATask" duration-ms="22185" started-at="2019-06-13T09:22:15Z" finished-at="2019-06-13T09:22:37Z">
+    <groups>
+    </groups>
+    <test name="Task_01" duration-ms="22185" started-at="2019-06-13T09:22:15Z" finished-at="2019-06-13T09:22:37Z">
+      <class name="test.Task_1">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:test.Task_1@6c3708b3]" name="launchBrowser" is-config="true" duration-ms="13463" started-at="2019-06-13T09:22:15Z" finished-at="2019-06-13T09:22:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method status="PASS" signature="login()[pri:0, instance:test.Task_1@6c3708b3]" name="login" duration-ms="4991" started-at="2019-06-13T09:22:29Z" finished-at="2019-06-13T09:22:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="selectAndDownload()[pri:1, instance:test.Task_1@6c3708b3]" name="selectAndDownload" duration-ms="3518" started-at="2019-06-13T09:22:34Z" finished-at="2019-06-13T09:22:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectAndDownload -->
+        <test-method status="PASS" signature="calculate()[pri:2, instance:test.Task_1@6c3708b3]" name="calculate" duration-ms="11" started-at="2019-06-13T09:22:37Z" finished-at="2019-06-13T09:22:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calculate -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:test.Task_1@6c3708b3]" name="quit" is-config="true" duration-ms="159" started-at="2019-06-13T09:22:37Z" finished-at="2019-06-13T09:22:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- test.Task_1 -->
+    </test> <!-- Task_01 -->
+  </suite> <!-- QATask -->
+</testng-results>

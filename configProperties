@@ -1,0 +1,5 @@
+AUT=https://www.investing.com/currencies/eur-usd-historical-data
+Email=gerald.quinto.as@gmail.com
+Password=Test1234
+Grid=false
+GridHub=http://192.168.1.89:8080/wd/hub
